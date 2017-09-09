@@ -5,5 +5,3 @@
 uurloon = float(input('Wat verdien je per uur:'))
 aantaluur= int(input('hoeveel uur heb je gewerkt:'))
 print(str(aantaluur)+' uur werken levert '+ str(uurloon*aantaluur)+' Euro op.')
-
-print('gittest')
