@@ -7,4 +7,4 @@ s = 'Guido van Rossum heeft programmeertaalPython bedacht.'
 
 for klinker in s:
     if klinker in 'aeoiu':
-        print(klinker)
+        print(klinker, end='')
