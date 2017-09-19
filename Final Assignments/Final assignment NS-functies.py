@@ -14,9 +14,7 @@ def standaardprijs(afstandKM):
         else:
             return 0.80*afstandKM
 
-
 def ritprijs(leeftijd, weekendrit, afstandKM):
-    standaardprijs(afstandKM)
     if weekendrit == 'ja':
         if leeftijd < 12 or leeftijd >=65:
             return standaardprijs(afstandKM)*0.65
@@ -28,6 +26,7 @@ def ritprijs(leeftijd, weekendrit, afstandKM):
         else:
             return standaardprijs(afstandKM)
 
+print('dit zijn de tests voor de final assignment')
 print('testleeftijd: 11, 3 keer weekendrit, 3 keer werkdagrit, afstanden -10KM, 10KM en 60KM')
 print('€' , ritprijs(11,'nee',-10), '€' , ritprijs(11,'nee',10), '€' , ritprijs(11,'nee',60))
 print('€' , ritprijs(11,'ja',-10), '€' , ritprijs(11,'ja',10), '€' , ritprijs(11,'ja',60))
