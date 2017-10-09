@@ -1,4 +1,4 @@
-klantnummer = open('kaartnummers.txt', 'r')
+klantnummer = open('kaartnummers.txt')
 content = klantnummer.read()
 klantnummer.close()
 
