@@ -6,4 +6,11 @@ klantnummer = open('kaartnummers.txt', 'r')
 content = klantnummer.readlines()
 klantnummer.close()
 
+nummerlijst = []
+
+for nummer in content:
+    itemcontent = nummer.split(', ')
+    nummerlijst.append(int(itemcontent[0]))
+
 print('Deze file telt', len(content), 'regels')
+print('het grootste kaartnummer is: {} en dat staat op regel {}'.format(max(nummerlijst),nummerlijst.index(max(nummerlijst))+1))
