@@ -27,14 +27,21 @@ def nieuwe_kluis():
     if len(nummerlijst) == 0:
         print('Er zijn geen kluizen vrij')
     else:
-        print('De volgende kluizen zijn vrij')
-        print(nummerlijst)
-
+        wachtwoord = input('Geef een code voor uw kluis op(minimaal 4 tekens): ')
+        while len(wachtwoord) < 4:
+            print('\nDit wachtwoord is te kort, u moet minimaal 4 tekens gebruiken.')
+            wachtwoord = input('Geef een code voor uw kluis op(minimaal 4 tekens): ')
+        kluisnummer = nummerlijst[0]
+        ontvangenKluis = '\n{};{}'.format(kluisnummer,wachtwoord)
+        schrijven = open('kluizen.txt', 'a')
+        schrijven.write(ontvangenKluis)
+        schrijven.close()
+        print('\nU heeft kluisnummer {} ontvangen'.format(kluisnummer))
 
 def kluis_openen():
     kluisnummer = (input('Geef uw, kluisnummer op: '))
     kluiscode = input('Geef uw kluiscode op: ')
-    kluisnc = kluisnummer.lower()+';'+kluiscode.lower()
+    kluisnc = kluisnummer()+';'+kluiscode()
 
     kluizen = open('kluizen.txt', 'r')
     aantalKluizen = kluizen.read()
