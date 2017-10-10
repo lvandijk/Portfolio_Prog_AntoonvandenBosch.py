@@ -22,7 +22,6 @@ def inlezen_eindstation(stations, beginstation):
 def omroepen_reis(stations, beginstation, eindstation):
     bs = stations.index(beginstation)
     es = stations.index(eindstation)
-    len(stations[stations.index(beginstation)::stations.index(eindstation)])
     print('\nHet beginstation {} is het {}e station in het traject.'.format(stations[bs], bs+1))
     print('Het eindstation {} is het {}e in het traject'.format(stations[stations.index(eindstation)], stations.index(eindstation)+1))
     print('De afstand bedraagt {} station(s)'.format(es-bs))
