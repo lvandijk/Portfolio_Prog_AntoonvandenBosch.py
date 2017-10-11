@@ -1,0 +1,60 @@
+Practice Exercise 10_3 (Locals & Globals)
+In de onderstaande programma’s worden locals en globals gebruikt. Ga na wat de uitvoer is van deze
+programma’s. Het is natuurlijk erg makkelijk om ze gewoon uit te voeren, maar probeer voordat je dat
+doet te beredeneren wat de uitvoer is en controleer dan pas jouw antwoord!
+
+a = 3
+def f(y):
+    global a
+    a = 9
+    return 2*y + a
+print(a)
+
+Antwoord is B): 3, want hij roept de functie nooit aan, waar door de globale a niet verandert
+
+x = 1
+y = 4
+def fun():
+    x = 2
+    global y
+    y = 3
+    print(y, end = ' ')
+fun()
+print(y, end = ' ')
+
+Antwoord is D): 3 3, want in de functie verandert hij de globale y in 3 en print die uit op het moment dat de functie
+word aangeroepen, waarna hij nogmaals de globale y uitprint waardoor het resultaat 3 3 is.
+
+x = 2
+y = 5
+def fun():
+    y = 3
+    global x
+    x = 1
+    print(x*y, end = ' ')
+    return x*y
+x = fun()
+print(x*y, end = ' ')
+
+Antwoord is A): 3 15, want in de funtie verandert hij de globale x naar 1 en nadat hij de print uitvoert, wat 3 is,
+returned hij x*y en geeft hij die aan x, waardoor je daarna 15 uitprint
+
+a = 3
+def fun1():
+    global a
+    print("a:", a, end = ' ')
+    b = 7
+    a = 0
+    return b
+
+def fun2(y):
+    a = y + fun1()
+    b = 7
+    a += 1
+    return a
+a = 9
+fun2(5)
+print("a:", a)
+
+Antwoord is C): a: 9 a: 0, want als hij de functie aanroept, dan print hij eerst de globale a uit voordat hij die naar 0
+verandert, wat betekent dat er eerst a: 9 en daarna a: 0 uitgeprint word
